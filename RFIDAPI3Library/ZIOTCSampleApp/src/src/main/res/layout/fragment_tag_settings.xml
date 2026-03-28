@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TagSettings.TagSettingsFragment">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <!--            <TextView-->
+            <!--                style="@style/style_medium_font"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:layout_weight="10"-->
+            <!--                android:gravity="bottom"-->
+            <!--                android:text="@string/tag_report_settings_title" />-->
+
+            <!--            <include layout="@layout/title_divider" />-->
+
+            <TableRow
+                android:id="@+id/pcRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pcTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/pc" />
+
+                <CheckBox
+                    android:id="@+id/cb_pc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/rssiRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/rssiTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/rssi" />
+
+                <CheckBox
+                    android:id="@+id/cb_rssi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/phaseRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/phaseTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/phase" />
+
+                <CheckBox
+                    android:id="@+id/cb_phase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/crcRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/crcTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/crc" />
+
+                <CheckBox
+                    android:id="@+id/cb_crc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+
+
+            <TableRow
+                android:id="@+id/channelRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/channelTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/channel_index" />
+
+                <CheckBox
+                    android:id="@+id/cb_channel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tagSeenRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tagSeenTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/tag_seen_count" />
+
+                <CheckBox
+                    android:id="@+id/cb_tag_seen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/antennaRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/antennaTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/antenna" />
+
+                <CheckBox
+                    android:id="@+id/cb_antenna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+            <!--  <TableRow
+                  android:id="@+id/epcRow"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="10"
+                  android:gravity="center">
+
+                  <TextView
+                      android:id="@+id/epcTitle"
+                      style="@style/style_normal_font"
+                      android:layout_width="0dp"
+                      android:layout_weight="85"
+                      android:gravity="start"
+                      android:text="@string/epc" />
+
+                  <CheckBox
+                      android:id="@+id/cb_epc"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="15"
+                      android:gravity="start" />
+              </TableRow>-->
+
+            <TableRow
+                android:id="@+id/tidRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tidTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/tid" />
+
+                <CheckBox
+                    android:id="@+id/cb_tid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/userRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/userTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/user" />
+
+                <CheckBox
+                    android:id="@+id/cb_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/firstSeenRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/firstSeenTitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/fistSeenTimeStamp" />
+
+                <CheckBox
+                    android:id="@+id/cb_firstseen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/lastSeenRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lastseentitle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="85"
+                    android:gravity="start"
+                    android:text="@string/lastSeenTimeStamp" />
+
+                <CheckBox
+                    android:id="@+id/cb_lastSeen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:gravity="start" />
+            </TableRow>
+<!--            <TableRow-->
+<!--                android:id="@+id/allfieldsRow"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="10"-->
+<!--                android:gravity="center">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/allFieldsTitle"-->
+<!--                    style="@style/style_normal_font"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_weight="85"-->
+<!--                    android:gravity="start"-->
+<!--                    android:text="@string/all_tagfields" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/cbAllFieldscheck"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="15"-->
+<!--                    android:gravity="start" />-->
+<!--            </TableRow>-->
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:text="@string/save_to_sled"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

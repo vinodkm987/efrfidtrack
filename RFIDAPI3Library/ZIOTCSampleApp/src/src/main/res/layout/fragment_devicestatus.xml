@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ReaderCapabilities.DeviceStatusFragment">
+
+    <TextView
+        android:id="@+id/title_deviceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_device_status"
+        style="@style/style_large_font"/>
+
+    <include layout="@layout/white_divider" />
+
+    <TextView
+        android:id="@+id/deviceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/style_normal_font"/>
+
+</LinearLayout>

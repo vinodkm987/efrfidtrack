@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_connect">
+
+    <fragment
+        android:id="@+id/nav_connect"
+        android:name="com.sample.api3transport.ui.Connect.ConnectFragment"
+        android:label="@string/fragment_connect_label"
+        tools:layout="@layout/fragment_connect" />
+
+    <fragment
+        android:id="@+id/nav_inventory"
+        android:name="com.sample.api3transport.ui.Inventory.InventoryFragment"
+        android:label="@string/inventory"
+        tools:layout="@layout/fragment_inventory" />
+
+    <fragment
+        android:id="@+id/nav_tag_settings"
+        android:name="com.sample.api3transport.ui.TagSettings.TagSettingsFragment"
+        android:label="@string/tag_settings"
+        tools:layout="@layout/fragment_tag_settings" />
+
+    <fragment
+        android:id="@+id/nav_singulation"
+        android:name="com.sample.api3transport.ui.Filters.SingulationFragment"
+        android:label="@string/title_singulation"
+        tools:layout="@layout/fragment_singulation" />
+
+    <fragment
+        android:id="@+id/nav_prefilter"
+        android:name="com.sample.api3transport.ui.Filters.PreFiltersFragment"
+        android:label="@string/title_prefilter"
+        tools:layout="@layout/fragment_prefilters" />
+
+    <fragment
+        android:id="@+id/nav_readerCapabilies"
+        android:name="com.sample.api3transport.ui.ReaderCapabilities.ReadercapabilitiesFragment"
+        android:label="@string/title_reader_capabilies"
+        tools:layout="@layout/fragment_readercapabilities" />
+
+    <fragment
+        android:id="@+id/nav_deviceStatus"
+        android:name="com.sample.api3transport.ui.ReaderCapabilities.DeviceStatusFragment"
+        android:label="@string/title_device_status"
+        tools:layout="@layout/fragment_devicestatus" />
+
+    <fragment
+        android:id="@+id/nav_access_operations"
+        android:name="com.sample.api3transport.ui.AccessOperations.AccessOperationsFragment"
+        android:label="@string/title_access_operation"
+        tools:layout="@layout/fragment_access_operations" />
+
+    <fragment
+        android:id="@+id/nav_trigger_settings"
+        android:name="com.sample.api3transport.ui.TriggerSettings.TriggerSettingsFragment"
+        android:label="@string/trigger_settings"
+        tools:layout="@layout/fragment_trigger_settings" />
+
+    <fragment
+        android:id="@+id/nav_regulatory"
+        android:name="com.sample.api3transport.ui.Regulatory.RegulatoryFragment"
+        android:label="@string/regulatory"
+        tools:layout="@layout/fragment_regulatory" />
+
+    <fragment
+        android:id="@+id/nav_antennaRFConfig"
+        android:name="com.sample.api3transport.ui.AntennaRFConfigSettings.AntennaRFConfigFragment"
+        android:label="@string/antennaRFConfig"
+        tools:layout="@layout/fragment_antenna_rfconfig" />
+    <fragment
+        android:id="@+id/nav_firmware"
+        android:name="com.sample.api3transport.ui.Firmware.FirmwareFragment"
+        android:label="Firmware Update"
+        tools:layout="@layout/fragment_firmware" />
+
+    <fragment
+        android:id="@+id/nav_json"
+        android:name="com.sample.api3transport.JSONFragment"
+        android:label="Mode JSON"
+        tools:layout="@layout/fragment_json" />
+
+
+</navigation>

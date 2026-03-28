@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_connect"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/connect" />
+        <item
+            android:id="@+id/nav_inventory"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/inventory" />
+        <item
+            android:id="@+id/nav_tag_settings"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/tag_settings" />
+        <item
+            android:id="@+id/nav_singulation"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/title_singulation" />
+        <item
+            android:id="@+id/nav_prefilter"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/title_prefilter" />
+
+        <item
+            android:id="@+id/nav_readerCapabilies"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/title_reader_capabilies" />
+
+        <item
+            android:id="@+id/nav_deviceStatus"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/title_device_status" />
+
+        <item
+            android:id="@+id/nav_access_operations"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/title_access_operation" />
+
+        <item
+            android:id="@+id/nav_trigger_settings"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/trigger_settings" />
+
+        <item
+            android:id="@+id/nav_regulatory"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/regulatory" />
+        <item
+            android:id="@+id/nav_antennaRFConfig"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Antenna RFConfig" />
+
+        <item
+            android:id="@+id/nav_firmware"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Firmware Update" />
+
+        <item
+            android:id="@+id/nav_json"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Mode JSON" />
+
+    </group>
+</menu>

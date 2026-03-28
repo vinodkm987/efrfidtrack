@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Filters.SingulationFragment">
+
+    <TableRow
+        style="@style/table_row_layout_style"
+        android:paddingTop="20dp"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_height="30dp"
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:text="@string/sel_region" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/supportedRegions"
+            style="@style/style_default_spinner"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background"/>
+
+    </TableRow>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            style="@style/base_layout_style"
+            android:orientation="vertical"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        style="@style/table_row_layout_style">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_channel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/regulatory_channel_checkbox" />
+
+                    </TableRow>
+
+                </LinearLayout>
+            </ScrollView>
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_gravity="center|bottom"
+                android:text="@string/save_to_sled" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

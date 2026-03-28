@@ -1,0 +1,238 @@
+<resources>
+    <string name="app_name">api3Transport</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">FX Reader</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="ip_address">Enter IP Address</string>
+    <string name="password">Enter Password</string>
+    <string name="fragment_inventory_label">Inventory</string>
+    <string name="fragment_connect_label">FX Reader</string>
+
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="not_connected">Not Connected</string>
+    <string name="transport_llrp">LLRP</string>
+    <string name="transport_ZIOTC">ZIOTC</string>
+
+    <string name="status">Status:</string>
+    <string name="reader_id">Reader ID:</string>
+    <string name="model_name">ModelName:</string>
+    <string name="communication_standard">Communication Standard:</string>
+    <string name="country_code">Country Code:</string>
+    <string name="firmware_version">FirmwareVersion:</string>
+    <string name="rssi_filter">RSSI Filter:</string>
+    <string name="sdk_version">SDK Version:</string>
+
+    <string name="rssi">RSSI</string>
+    <string name="count">Count</string>
+    <string name="tag">TAG</string>
+    <string name="inventory">Inventory</string>
+
+    <string name="tag_settings">Tag Settings</string>
+    <string name="tag_report_settings_title">Tag Report Settings</string>
+    <string name="first_seen_time">First Seen Time</string>
+    <string name="last_seen_time">Last Seen Time</string>
+    <string name="pc">PC</string>
+    <string name="phase">Phase</string>
+    <string name="antenna">Antenna</string>
+    <string name="crc">CRC</string>
+    <string name="epc">EPC</string>
+    <string name="tid">TID</string>
+    <string name="user">USER</string>
+    <string name="channel_index">Channel Index</string>
+    <string name="tag_seen_count">Tag Seen Count</string>
+    <string name="save_to_sled">SAVE</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_all_Prefilters">Delete all Prefilters</string>
+    <string name="all_tagfields">Select all</string>
+    <string name="fistSeenTimeStamp">First Seen Time Stamp</string>
+    <string name="lastSeenTimeStamp">Last Seen Time Stamp</string>
+    <string name="title_singulation">Singulation</string>
+    <string name="sl_flag_title">SL Flag</string>
+    <string name="inv_state_title">Inventory State</string>
+    <string name="tag_population_title">Tag Population</string>
+    <string name="session_title">Session</string>
+
+    <string name="title_prefilter">Prefilter</string>
+    <string name="prefilter_target">Target</string>
+    <string name="prefilter_action">Action</string>
+    <string name="prefilter_membank">Memory bank</string>
+    <string name="prefilter_pointer">Pointer</string>
+    <string name="prefilter_length">Length</string>
+    <string name="prefilter_mask">Tag Pattern</string>
+    <string name="prefilter_truncate">Truncate</string>
+
+    <string name="sel_antenna">Select Antenna</string>
+
+    <!-- Items for sessions -->
+    <string-array name="session_array">
+        <item>S0</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+
+    <!-- Items for populating tags -->
+    <string-array name="tag_population_array">
+        <item>30</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+    </string-array>
+
+    <!-- Items for inventory state -->
+    <string-array name="inventory_state_array">
+        <item>STATE A</item>
+        <item>STATE B</item>
+        <item>AB FLIP</item>
+    </string-array>
+
+    <string-array name="sl_flags_array">
+        <item>ASSERTED</item>
+        <item>DEASSERTED</item>
+        <item>ALL</item>
+    </string-array>
+
+    <string-array name="pre_filter_memory_bank_array">
+        <item>RESERVED</item>
+        <item>EPC</item>
+        <item>TID</item>
+        <item>USER</item>
+    </string-array>
+
+    <string-array name="pre_filter_action_array">
+        <item>INV A NOT INV B OR ASRT SL NOT DSRT SL</item>
+        <item>INV A OR ASRT SL</item>
+        <item>NOT INV B OR NOT DSRT SL</item>
+        <item>INV A2BB2A NOT INV A OR NEG SL NOT ASRT SL</item>
+        <item>INV B NOT INV A OR DSRT SL NOT ASRT SL</item>
+        <item>INV B OR DSRT SL</item>
+        <item>NOT INV A OR NOT ASRT SL</item>
+        <item>NOT INV A2BB2A OR NOT NEG SL</item>
+    </string-array>
+
+    <string-array name="pre_filter_target_options">
+        <item>SL FLAG</item>
+        <item>SESSION S0</item>
+        <item>SESSION S1</item>
+        <item>SESSION S2</item>
+        <item>SESSION S3</item>
+    </string-array>
+
+    <string-array name="pre_filter_index">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string name="title_device_status">Device Status</string>
+    <string name="title_reader_capabilies">Reader Capabilities</string>
+    <string name="title_supportedRegions">Supported Regions</string>
+    <string name="title_NetworkStat">Network Status</string>
+
+    <string name="title_access_operation">Access Operations</string>
+    <string name="tag_pattern_title">Tag Pattern</string>
+    <string name="password_title">Password</string>
+    <string name="memory_bank_title">Memory Bank</string>
+    <string name="offset_title">Offset (words)</string>
+    <string name="length_title">Length (words)</string>
+    <string name="data_title">Data</string>
+    <string name="operation_success">Operation Completed Successfully</string>
+    <string name="read_title">READ</string>
+    <string name="write_title">WRITE</string>
+    <string name="read_write_title">Read/Write</string>
+    <string name="lock_privilege_title">Lock Privilege</string>
+    <string name="lock_title">Lock</string>
+    <string name="kill_pass_title">Kill Password</string>
+    <string name="kill_title">Kill</string>
+    <string name="offset_bits_title">Offset (words)</string>
+    <string name="target_title">Target</string>
+    <string name="action_title">Action</string>
+
+    <string-array name="memory_bank_array">
+        <item>RESERVED</item>
+        <item>EPC</item>
+        <item>TID</item>
+        <item>USER</item>
+    </string-array>
+
+    <string-array name="lock_privilege_array">
+        <item>Read and Write</item>
+        <item>Permanent Lock</item>
+        <item>Permanent Unlock</item>
+        <item>Unlock</item>
+    </string-array>
+
+    <string-array name="lock_memory_bank_array">
+        <item>EPC</item>
+        <item>ACCESS PWD</item>
+        <item>KILL PWD</item>
+        <item>TID</item>
+        <item>USER</item>
+        <item>ALL</item>
+    </string-array>
+
+    <string-array name="start_trigger">
+        <item>Immediate</item>
+        <item>GPI</item>
+    </string-array>
+
+    <string-array name="stop_trigger">
+        <item>Immediate</item>
+        <item>GPI</item>
+        <item>Duration</item>
+        <item>Tag Observation</item>
+        <item>N attempts</item>
+    </string-array>
+
+    <string name="low">Low</string>
+    <string name="high">High</string>
+    <string name="port">Port</string>
+    <string name="signal">Signal</string>
+    <string name="port_number">Port Number</string>
+    <string name="trigger">Trigger</string>
+    <string name="port_text">1</string>
+    <string name="duration">Duration</string>
+    <string name="trigger_settings">Trigger Settings</string>
+
+    <string name="sel_region">Select Region</string>
+    <string name="regulatory">Regulatory</string>
+
+    <string name="antennaRFConfig">Antenna RF Configuration</string>
+    <string name="antenna_stop_condition">Antenna Stop Condition</string>
+    <string name="antenna_stop_condition_value">Stop Condition value</string>
+
+    <string-array name="antenna_stop_condition_type">
+        <item>INVENTORY_COUNT</item>
+        <item>DURATION</item>
+        <item>GPI</item>
+        <item>SINGLE_INVENTORY_LIMITED_DURATION</item>
+    </string-array>
+
+    <string name="GPI_params">GPI Params</string>
+    <string name="Port">Port Num</string>
+    <string name="Signal">Signal</string>
+    <string name="debounce">Debounce time</string>
+    <string-array name="signal_Params">
+        <item>HIGH</item><item>LOW</item>
+    </string-array>
+    <string name="transmitPower">Transmit power</string>
+    <string name="environment">Environment</string>
+    <string-array name="environment_params">
+        <item>LOW_INTERFERENCE</item>
+        <item>HIGH_INTERFERENCE</item>
+        <item>VERY_HIGH_INTERFERENCE</item>
+        <item>AUTO_DETECT</item>
+        <item>DEMO</item>
+    </string-array>
+
+
+</resources>

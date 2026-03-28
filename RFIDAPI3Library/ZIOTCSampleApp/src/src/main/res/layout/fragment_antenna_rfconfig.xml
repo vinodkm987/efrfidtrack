@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AntennaRFConfigSettings.AntennaRFConfigFragment">
+
+    <TableRow
+        android:id="@+id/tableRow"
+        style="@style/table_row_layout_style"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="30"
+            android:text="@string/sel_antenna" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/antenna"
+            style="@style/style_default_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background" />
+
+    </TableRow>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TableRow
+                    android:id="@+id/antennaRFConfigRow5"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/transmitPower"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/transmitPower" />
+
+                    <EditText
+                        android:id="@+id/et_transmitPower"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:hint="@string/transmitPower"
+                        android:inputType="number"
+                        android:text="27" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/singulationControlRow4"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/envronmentTitle"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/environment" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_environment"
+                        style="@style/style_default_spinner"
+                        android:layout_margin="0dp"
+                        android:layout_weight="60"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:popupBackground="@android:drawable/spinner_background" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/antennaRFConfigRow1"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/AntennaStopCondtionTitle"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/antenna_stop_condition" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_antennaStopCondition"
+                        style="@style/style_default_spinner"
+                        android:layout_margin="0dp"
+                        android:layout_weight="60"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:popupBackground="@android:drawable/spinner_background" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/stopValueRow6"
+                    style="@style/table_row_layout_style"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/StopconditionVal"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/antenna_stop_condition_value" />
+
+                    <EditText
+                        android:id="@+id/et_stop_condition_val"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:hint="@string/antenna_stop_condition_value"
+                        android:inputType="number"
+                        android:text="27" />
+                </TableRow>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutgpi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout1"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TableRow
+                    android:id="@+id/antennaRFConfigRow2"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/Port"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/Port" />
+
+                    <EditText
+                        android:id="@+id/et_port"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:hint="@string/Port"
+                        android:inputType="number"
+                        android:text="1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/antennaRFConfigRow3"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/debounce"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/debounce" />
+
+                    <EditText
+                        android:id="@+id/et_debounce"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:hint="@string/debounce"
+                        android:inputType="number"
+                        android:text="0" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/antennaRFConfigRow4"
+                    style="@style/table_row_layout_style">
+
+                    <TextView
+                        android:id="@+id/signal"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/Signal" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_signal_params"
+                        style="@style/style_default_spinner"
+                        android:layout_margin="0dp"
+                        android:layout_weight="60"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:popupBackground="@android:drawable/spinner_background" />
+                </TableRow>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:text="@string/save_to_sled" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

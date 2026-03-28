@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.sample.api3transport'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.sample.api3transport"
+        minSdk 26
+        targetSdk 35
+        versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 125
+        versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "2.0.2.125"
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        config {
+            storeFile file('../RFIDreaderX_KEYSTORE.jks')
+            keyAlias "RFID_READER_X"
+            storePassword System.getenv("KEY_STORE_PWD")
+            keyPassword System.getenv("KEY_PWD")
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            crunchPngs false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "ZIOTC_RFID_Mobile-" + defaultConfig.versionName + ".apk"
+                }
+            }
+        }
+        debug {
+            minifyEnabled true
+            crunchPngs false
+           // signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "ZIOTC_RFID_Mobile-" + defaultConfig.versionName + ".apk"
+                }
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.7.7'
+    implementation 'androidx.navigation:navigation-ui:2.7.7'
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation "org.java-websocket:Java-WebSocket:1.5.3"
+    implementation project(':rfidreader')
+    implementation project(':commonlib')
+    implementation project(':api3Transport')
+    implementation project(':llrp')
+    implementation fileTree(dir: './../libs/', include: ['*.aar', '*.jar'], exclude: [])
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

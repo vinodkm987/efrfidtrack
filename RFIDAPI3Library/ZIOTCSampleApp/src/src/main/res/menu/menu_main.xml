@@ -1,0 +1,83 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sample.api3transport.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/get_caps"
+        android:orderInCategory="100"
+        android:title="getCaps"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_start"
+        android:orderInCategory="100"
+        android:title="Start"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_stop"
+        android:orderInCategory="100"
+        android:title="Stop"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/add_singulation"
+        android:orderInCategory="100"
+        android:title="singulation"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/add_trigger"
+        android:orderInCategory="100"
+        android:title="trigger"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/add_filter"
+        android:orderInCategory="100"
+        android:title="add_filter"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/do_read"
+        android:orderInCategory="100"
+        android:title="do_read"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/do_write"
+        android:orderInCategory="100"
+        android:title="do_write"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/do_lock"
+        android:orderInCategory="100"
+        android:title="lock"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/del_selects"
+        android:orderInCategory="100"
+        android:title="delSelects"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/set_start_trigger"
+        android:orderInCategory="100"
+        android:title="setstarttrigger"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/set_stop_trigger"
+        android:orderInCategory="100"
+        android:title="setstoptrigger"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/do_kill"
+        android:orderInCategory="100"
+        android:title="kill"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_wrap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tag_data_epc"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hyphenationFrequency="none"
+            android:text="AAAABBBBCCCCDDDDEEEEFFFF" />
+
+        <TextView
+            android:id="@+id/tag_data_tid"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hyphenationFrequency="none"
+            android:text="AAAABBBBCCCCDDDDEEEEFFFF" />
+
+        <TextView
+            android:id="@+id/tag_data_user"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hyphenationFrequency="none"
+            android:text="AAAABBBBCCCCDDDDEEEEFFFF" />
+
+        <TextView
+            android:id="@+id/tag_seen_count"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+
+        <TextView
+            android:id="@+id/tag_rssi"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="-45" />
+
+        <TextView
+            android:id="@+id/tag_pc"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+
+        <TextView
+            android:id="@+id/tag_crc"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+
+        <TextView
+            android:id="@+id/tag_antenna"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+
+        <TextView
+            android:id="@+id/tag_channel"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+
+        <TextView
+            android:id="@+id/tag_phase"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="12345" />
+        <TextView
+            android:id="@+id/first_seen"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="0:0" />
+        <TextView
+            android:id="@+id/last_seen"
+            style="@style/style_inventory_list_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="0:0" />
+    </LinearLayout>
+
+</LinearLayout>

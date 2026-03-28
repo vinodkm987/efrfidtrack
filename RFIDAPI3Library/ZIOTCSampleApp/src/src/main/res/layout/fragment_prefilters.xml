@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.Filters.PreFiltersFragment">
+
+    <TableRow
+        style="@style/table_row_layout_style"
+        app:layout_constraintBaseline_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:text="@string/sel_antenna" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/antenna"
+            style="@style/style_default_spinner"
+            android:layout_width="20dp"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background"/>
+
+    </TableRow>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="397dp"
+        android:layout_height="427dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_target" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/prefilter_target"
+                    style="@style/style_default_spinner"
+                    android:layout_margin="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:popupBackground="@android:drawable/spinner_background" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_action" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/prefilter_action"
+                    style="@style/style_default_spinner"
+                    android:layout_margin="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:popupBackground="@android:drawable/spinner_background" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_membank" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/prefilter_membank"
+                    style="@style/style_default_spinner"
+                    android:layout_margin="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:popupBackground="@android:drawable/spinner_background" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_pointer" />
+
+                <EditText
+                    android:id="@+id/et_pointer"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_length" />
+
+                <EditText
+                    android:id="@+id/et_length"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="4" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_mask" />
+
+                <EditText
+                    android:id="@+id/et_mask"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:text="AAAA" />
+            </TableRow>
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/prefilter_truncate" />
+
+                <EditText
+                    android:id="@+id/et_truncate"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="0" />
+            </TableRow>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TableRow
+        android:id="@+id/saveRow"
+        style="@style/table_row_layout_style"
+        app:layout_constraintBottom_toTopOf="@+id/button_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:text="@string/title_prefilter" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/prefilter_index"
+            style="@style/style_default_spinner"
+            android:layout_width="20dp"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background"/>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="15"
+            android:text="@string/save_to_sled" />
+
+    </TableRow>
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:text="@string/delete_all_Prefilters"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

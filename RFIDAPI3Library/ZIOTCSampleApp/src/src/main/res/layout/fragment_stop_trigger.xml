@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TriggerSettings.StopTriggerFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow style="@style/table_row_layout_style">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="@string/trigger" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_stop_trigger"
+                    style="@style/style_default_spinner"
+                    android:layout_margin="0dp"
+                    android:layout_weight="60"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:popupBackground="@android:drawable/spinner_background" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/layout_gpi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TableRow style="@style/table_row_layout_style">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/port" />
+
+                    <EditText
+                        android:id="@+id/et_port"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:hint="@string/port_number"
+                        android:inputType="number"
+                        android:text="@string/port_text" />
+                </TableRow>
+
+                <TableRow style="@style/table_row_layout_style">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/signal" />
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/toggle_signal"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:textOff="@string/low"
+                        android:textOn="@string/high"
+                        android:gravity="center" />
+                </TableRow>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_stop_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow style="@style/table_row_layout_style">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:id="@+id/tv_stop_condition"
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="@string/duration" />
+
+                    <EditText
+                        android:id="@+id/et_stop_condition"
+                        android:layout_width="0dp"
+                        android:layout_weight="60"
+                        android:autofillHints=""
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="30" />
+                </TableRow>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:text="@string/save_to_sled" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Firmware.FirmwareFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/reader_fw_tittle"
+                style="@style/style_large_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reader Firmware:" />
+            <TextView
+                android:id="@+id/reader_fw"
+                style="@style/style_normal_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/path/path/path/path/file"
+                android:paddingBottom="30dp"/>
+
+            <TextView
+                android:id="@+id/selected_fw_tittle"
+                style="@style/style_large_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Firmware" />
+            <TextView
+                android:id="@+id/selected_fw"
+                style="@style/style_normal_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/path/path/path/path/file"
+                android:paddingBottom="30dp"/>
+
+            <TableRow
+                style="@style/table_row_layout_style">
+
+                <TextView
+                    android:id="@+id/precentage_tittle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="Precentage" />
+
+                <TextView
+                    android:id="@+id/precentage"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:autofillHints=""
+                    android:gravity="center"
+                    android:text="--%" />
+            </TableRow>
+
+            <TableRow
+                style="@style/table_row_layout_style">
+
+                <TextView
+                    android:id="@+id/status_tittle"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_weight="40"
+                    android:text="Status" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:autofillHints=""
+                    android:gravity="center"
+                    android:text="STATUS" />
+            </TableRow>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:id="@+id/bt_select_fw"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_weight="1"
+                android:text="Select" />
+
+            <Button
+                android:id="@+id/bt_update_fw"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="update" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

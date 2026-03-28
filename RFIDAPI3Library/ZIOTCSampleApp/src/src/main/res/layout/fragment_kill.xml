@@ -1,0 +1,105 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    tools:context=".ui.AccessOperations.KillFragment">
+
+    <TableRow
+        android:id="@+id/table_row_antenna"
+        style="@style/table_row_layout_style"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_read_write"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="30"
+            android:gravity="start|center"
+            android:text="@string/sel_antenna" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/antenna"
+            style="@style/style_default_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background" />
+
+    </TableRow>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_read_write"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            style="@style/base_layout_style"
+            android:orientation="vertical"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <include
+                android:id="@+id/tag_ID"
+                layout="@layout/autocomplete_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_start_padding" />
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="50"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="@string/kill_pass_title" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    style="@style/style_normal_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/edit_text"
+                    android:layout_weight="1"
+                    android:autofillHints="@string/password_title"
+                    android:digits="0123456789ABCDEF"
+                    android:gravity="center"
+                    android:maxLength="8"
+                    android:text="00" />
+
+            </TableRow>
+
+            <Button
+                android:id="@+id/button_kill"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:layout_gravity="bottom|center"
+                android:gravity="center"
+                android:text="@string/kill_title" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

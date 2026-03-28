@@ -1,0 +1,234 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    tools:context=".ui.AccessOperations.ReadWriteFragment">
+
+    <TableRow
+        android:id="@+id/table_row_antenna"
+        style="@style/table_row_layout_style"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_read_write"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/style_normal_font"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="30"
+            android:gravity="start|center"
+            android:text="@string/sel_antenna" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/antenna"
+            style="@style/style_default_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="30"
+            android:background="@android:drawable/btn_dropdown"
+            android:popupBackground="@android:drawable/spinner_background" />
+
+    </TableRow>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_read_write"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardElevation="8dp"
+        app:contentPadding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            tools:context=".ui.AccessOperations.ReadWriteFragment">
+
+            <include
+                android:id="@+id/tag_ID"
+                layout="@layout/autocomplete_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_start_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/default_start_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/password_title" />
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:autofillHints="@string/password_title"
+                        android:background="@android:drawable/edit_text"
+                        android:digits="0123456789ABCDEF"
+                        android:gravity="center"
+                        android:maxLength="8"
+                        android:text="00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="@string/memory_bank_title" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_membank"
+                        style="@style/style_default_spinner"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:popupBackground="@android:drawable/spinner_background" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:gravity="start|center"
+                        android:text="@string/offset_title" />
+
+                    <EditText
+                        android:id="@+id/et_offset"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/style_normal_font"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:gravity="start|center"
+                        android:text="@string/length_title" />
+
+                    <EditText
+                        android:id="@+id/et_length"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:background="@android:drawable/edit_text"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:paddingTop="5dp"
+                        android:text="0" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <!--                <TextView-->
+                <!--                    style="@style/style_normal_font"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:paddingStart="@dimen/default_start_padding"-->
+                <!--                    android:text="@string/data_title" />-->
+
+                <EditText
+                    android:id="@+id/et_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/edit_text"
+                    android:digits="0123456789ABCDEF"
+                    android:hint="@string/data_title"
+                    android:inputType="textCapCharacters|textNoSuggestions"
+                    android:singleLine="true"
+                    android:paddingStart="@dimen/default_start_padding"
+                    android:paddingEnd="@dimen/default_end_padding" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/button_read"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="0.5dp"
+                    android:layout_weight="1"
+                    android:text="@string/read_title" />
+
+                <Button
+                    android:id="@+id/button_write"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="@string/write_title" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
