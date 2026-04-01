@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Zebra TC27 e-Connectix uses the Zebra RFID host service — no Bluetooth permissions needed -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Override library minSdk (26) since app supports minSdk 24 -->
     <uses-sdk tools:overrideLibrary="com.zebra.rfid.api3,com.zebra.rfid.api3.cmn,com.zebra.rfid.api3.iface,com.zebra.rfid.api3.transport,com.zebra.rfid.api3.ascii,com.zebra.rfidhostlib,com.zebra.rfidseriallib" />

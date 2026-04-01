@@ -32,11 +32,9 @@ class RfidManager(private val context: Context) {
     private var readers: Readers? = null
     private var rfidReader: RFIDReader? = null
 
-    // EPCs seen in the current scan session — cleared on each startScan()
-    private val seenEpcs = mutableSetOf<String>()
-
-    private val _scannedUpc = MutableSharedFlow<String>(extraBufferCapacity = 64)
-    val scannedUpc: SharedFlow<String> = _scannedUpc.asSharedFlow()
+    // Emits (epc, upc) for every decoded tag read. Deduplication is the ViewModel's responsibility.
+    private val _scannedTag = MutableSharedFlow<Pair<String, String>>(extraBufferCapacity = 128)
+    val scannedTag: SharedFlow<Pair<String, String>> = _scannedTag.asSharedFlow()
 
     private val _connectionState = MutableStateFlow(ConnectionState.DISCONNECTED)
     val connectionState: StateFlow<ConnectionState> = _connectionState.asStateFlow()
@@ -48,10 +46,13 @@ class RfidManager(private val context: Context) {
         override fun eventReadNotify(e: RfidReadEvents) {
             val tags = rfidReader?.Actions?.getReadTags(100) ?: return
             for (tag in tags) {
-                val epc = tag.getTagID() ?: continue
-                if (seenEpcs.add(epc)) {
+                try {
+                    val epc = tag?.getTagID() ?: continue
+                    if (epc.isBlank()) continue
                     val upc = EpcDecoder.decodeToUpc(epc) ?: continue
-                    _scannedUpc.tryEmit(upc)
+                    _scannedTag.tryEmit(epc to upc)
+                } catch (ex: Exception) {
+                    Log.w(TAG, "Skipping tag due to error: ${ex.message}")
                 }
             }
         }
@@ -119,7 +120,6 @@ class RfidManager(private val context: Context) {
 
     fun startScan() {
         if (_isScanning.value) return
-        seenEpcs.clear()
         try {
             rfidReader?.Actions?.Inventory?.perform()
             _isScanning.value = true

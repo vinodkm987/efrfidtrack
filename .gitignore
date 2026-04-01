@@ -13,3 +13,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Google service account keys — never commit credentials
+*-p4-*.json
+app/src/main/*.json
+
+# Backup / scratch CSV files
+*.bak.csv
+*Copy*.csv
