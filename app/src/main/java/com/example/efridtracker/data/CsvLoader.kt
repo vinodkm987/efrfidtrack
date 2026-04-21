@@ -5,8 +5,6 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
-import java.net.HttpURLConnection
-import java.net.URL
 
 class CsvLoader(private val context: Context) {
 
@@ -40,26 +38,17 @@ class CsvLoader(private val context: Context) {
     companion object {
         private const val TAG = "CsvLoader"
         private const val CACHE_FILE = "inventory.csv"
-        private const val DRIVE_URL =
-            "https://drive.google.com/uc?export=download&id=15NtHJeImJs6GWCm6OnI0EtQmBBwWeWgU"
+        private const val DRIVE_FILE_ID = "1YVXruhpY8WyLUBHluasMZat5Dn-27oUL"
 
         /**
-         * Downloads inventory.csv from Google Drive and saves it to internal cache.
+         * Downloads inventory.csv from Google Drive via service account and saves to internal cache.
          * Throws on failure — caller is responsible for fallback handling.
          */
         suspend fun syncFromDrive(context: Context) = withContext(Dispatchers.IO) {
             Log.d(TAG, "Syncing inventory from Drive...")
-            val connection = URL(DRIVE_URL).openConnection() as HttpURLConnection
-            connection.connectTimeout = 10_000
-            connection.readTimeout = 15_000
-            connection.instanceFollowRedirects = true
-            try {
-                val text = connection.inputStream.bufferedReader().readText()
-                File(context.filesDir, CACHE_FILE).writeText(text)
-                Log.d(TAG, "Drive sync complete (${text.lines().size} lines)")
-            } finally {
-                connection.disconnect()
-            }
+            val text = DriveUploader.download(context, DRIVE_FILE_ID)
+            File(context.filesDir, CACHE_FILE).writeText(text)
+            Log.d(TAG, "Drive sync complete (${text.lines().size} lines)")
         }
     }
 }
