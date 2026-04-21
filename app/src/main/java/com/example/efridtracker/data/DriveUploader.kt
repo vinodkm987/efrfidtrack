@@ -52,24 +52,47 @@ object DriveUploader {
         Log.d(TAG, "download: fetching file $fileId via service account")
         val sa = loadServiceAccount(context)
         val token = getAccessToken(sa)
-        val conn = URL("https://www.googleapis.com/drive/v3/files/$fileId/export?mimeType=text%2Fcsv")
-            .openConnection() as HttpURLConnection
-        conn.setRequestProperty("Authorization", "Bearer $token")
-        conn.connectTimeout = 10_000
-        conn.readTimeout = 15_000
-        try {
-            val code = conn.responseCode
-            if (code != 200) {
-                val err = conn.errorStream?.bufferedReader()?.readText() ?: "no body"
-                Log.e(TAG, "download: FAILED ($code): $err")
-                throw Exception("Drive download failed ($code): $err")
+        // Try plain binary download first (uploaded CSV file).
+        // Fall back to export if Drive says it's a native Docs/Sheets file.
+        return@withContext fetchWithFallback(fileId, token)
+    }
+
+    private fun fetchWithFallback(fileId: String, token: String): String {
+        val mediaUrl   = "https://www.googleapis.com/drive/v3/files/$fileId?alt=media"
+        val exportUrl  = "https://www.googleapis.com/drive/v3/files/$fileId/export?mimeType=text%2Fcsv"
+
+        fun get(url: String): Pair<Int, String> {
+            val conn = URL(url).openConnection() as HttpURLConnection
+            conn.setRequestProperty("Authorization", "Bearer $token")
+            conn.connectTimeout = 10_000
+            conn.readTimeout    = 15_000
+            return try {
+                val code = conn.responseCode
+                val body = if (code == 200)
+                    conn.inputStream.bufferedReader().readText()
+                else
+                    conn.errorStream?.bufferedReader()?.readText() ?: "no body"
+                Log.d(TAG, "download: [$code] $url")
+                code to body
+            } finally {
+                conn.disconnect()
             }
-            val text = conn.inputStream.bufferedReader().readText()
-            Log.d(TAG, "download: success, ${text.lines().size} lines")
-            text
-        } finally {
-            conn.disconnect()
         }
+
+        val (code1, body1) = get(mediaUrl)
+        if (code1 == 200) return body1
+
+        // Drive returns fileNotDownloadable for Google Sheets — retry with export
+        if (code1 == 403 && body1.contains("fileNotDownloadable")) {
+            Log.d(TAG, "download: native Docs file detected, retrying with export endpoint")
+            val (code2, body2) = get(exportUrl)
+            if (code2 == 200) return body2
+            Log.e(TAG, "download: export also failed ($code2): $body2")
+            throw Exception("Drive download failed ($code2): $body2")
+        }
+
+        Log.e(TAG, "download: FAILED ($code1): $body1")
+        throw Exception("Drive download failed ($code1): $body1")
     }
 
     // ── Service account JSON ──────────────────────────────────────────────────
